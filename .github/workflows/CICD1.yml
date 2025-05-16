@@ -1,6 +1,7 @@
 name: Build and Upload Artifact
+
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # 👉 수동 실행을 위한 설정
 
 jobs:
   build:
@@ -14,7 +15,7 @@ jobs:
           echo "Hello, artifact!" > build/hello.txt
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # ✅ 최신 버전 사용
         with:
           name: my-artifact
           path: build/
